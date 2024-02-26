@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidates Mark List</title>
+    <link rel="icon" href="https://i.postimg.cc/pdxg3N1v/favicon-16x16.png">
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            padding: 16px;
+            text-align: center;
+            background-color: #1B1A55;
+            color: white;
+        }
+        input{
+            border: 0px solid white;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: large;
+        }
+        input[type="text"]{
+            margin: 5px;
+            padding: 10px;
+            width: 50%;
+        }
+        input[type="submit"]{
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 6px 0 6px 0; 
+            cursor: pointer;
+        }
+            input[type=submit]:hover {
+            background-color: #f4511e;
+            border-radius: 0 5px 0 5px ;
+        }
+        input:hover{
+            scale: 1.05;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Marks</h1><br><br>
+    <form action="ms.jsp" method="get">
+        <input type="text" name="regno" id="" placeholder="Reg no"/><br><br>
+        <input type="text" name="name" id="" placeholder="Name"/><br><br>
+        <input type="text" name="DM" id="dm" placeholder="DM Mark"/><br><br>
+        <input type="text" name="AOS" id="aos" placeholder="AOS Mark"/><br><br>
+        <input type="text" name="PHP" id="php" placeholder="PHP Mark"/><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<script>
+    var a = parseInt(document.getElementById("dm").value);
+    var b = parseInt(document.getElementById("aos").value);
+    var c = parseInt(document.getElementById("php").value);
+    
+    var perc = (a+b+c)/300
+    if(perc>=0.5)
+    {
+        
+    }
+
+
+    </script>
+</html>

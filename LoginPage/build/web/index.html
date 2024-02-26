@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Company | Login</title>
+    <link rel="icon" href="https://i.postimg.cc/2528K56n/favicon-16x16.png">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            background: rgb(192,215,255);
+            background: linear-gradient(117deg, rgba(192,215,255,1) 0%, rgba(201,216,241,1) 20%, rgba(122,172,255,1) 30%, rgba(122,172,255,1) 70%, rgba(201,216,241,1) 80%, rgba(192,215,255,1) 100%);
+            box-sizing: border-box;
+        }
+        .center-container{
+            padding: 25px;
+            background-color: #21395f;
+            color: white;
+            text-align: center;
+            font-size: larger;
+            width:fit-content;
+            height: fit-content;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
+        }
+        input{
+            border: none;
+            width: 15vw;
+            height: 3vh;
+            padding: 5px;
+            margin: 5px;
+            outline: none;
+            color: white;
+            background-color: #2c4975;
+            
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active{
+            -webkit-box-shadow: 0 0 0 30px #2c4975 inset !important;
+        }
+        input:-webkit-autofill{
+            -webkit-text-fill-color: white !important;
+        }
+        .input:hover{
+            border-bottom: 1px solid #4470b1;
+        }
+        input[type=submit] {
+            background-color: #4470b1;
+            color: white;
+            width: max-content;
+            height: max-content;
+            font-family: sans-serif;
+            font-size: medium;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin:25px;
+            margin-left: 15px;
+            padding: 10px 20px;
+        }
+        input[type=submit]:hover{
+            scale: 1.1;
+            background-color: #5c82bb;
+            font-family: sans-serif;
+        }
+        h1{
+            font-family: cursive;
+        }
+        
+        #username{
+            background: url("https://i.postimg.cc/4xnKWR3x/username.png") no-repeat center;
+            background-size: 20px;
+        }
+        #password{
+            background: url("https://i.postimg.cc/VsRd1krN/padlock.png") no-repeat center;
+            background-size: 20px;
+        }
+        .input-box{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: #2c4975;
+            margin: 15px;
+            padding-left: 3px;
+            border-radius: 5px;
+        }
+        .icon{
+            background-color: #2c4975;
+            height: 20px;
+            width: 20px;
+            padding: 3px;
+            border-right: 2px solid #7aacff;
+        }
+        .submit-btn{
+            text-align: left;
+        }
+        .forget-pswrd{
+            text-align: right;
+            margin: 15px;
+            font-size: small;
+            background-color: inherit;
+            color: #6f7e8e;
+            border: none;
+        }
+        button{
+            font-size: small;
+            background-color: inherit;
+            color: #6f7e8e;
+            border: none;
+            cursor: pointer;
+        }
+        button:active{
+            color: white;
+        }
+        .pswrd-icon{
+            width: fit-content;
+            padding-right: 2px;
+            display: flex;
+            align-items: center;
+        }
+        img{
+            width: auto;
+            height: 3vh;
+            padding-right:2px ;
+            text-align: center;
+        }
+        .error-msg{
+            font-size:x-small;
+            color: #de4b4d;
+            text-align: left;
+            font-family: cursive;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form action="servletForm" method="post" onsubmit="return validatePswrd()">
+        <div class="center-container">
+            <h1>Log In</h1>
+            <div class="input-box">
+                <div class="icon" id="username">
+                </div>
+                <input type="text" class="input" name="username" placeholder="Username"/>
+            </div>
+            <div class="input-box">
+                <div class="icon" id="password"></div>
+                <input type="password" class="input" id="pswrd" name="password" placeholder="Password"/>
+                <div class="pswrd-icon">
+                    <button type="button"  onclick="showPswrd()" >
+                        <img src="https://i.postimg.cc/fbmRPzQD/view.png" alt="👁️"  id="eye">
+                    </button>
+                </div>
+            </div>
+            <div class="error-msg" id="error"></div>
+            <div class="forget-pswrd">
+                <button type="button" onclick="alertBox()">Lost Password?</button>
+            </div>
+            <div class="submit-btn">
+                <input type="submit" value="Login"/>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        function alertBox(){
+            alert(" Couldn't access this feature. \n You have been blocked due to a violation of our Terms of Use");
+        }
+
+        function showPswrd() {
+        var x = document.getElementById("pswrd");
+        var y = document.getElementById("eye");
+        if (x.type === "password") {
+            x.type = "text";
+            y.src="https://i.postimg.cc/PxMrtSq7/hide.png"
+        } else {
+            x.type = "password";
+            y.src="https://i.postimg.cc/fbmRPzQD/view.png"
+        }
+        }
+
+        function validatePswrd(){
+            var x = document.getElementById("pswrd").value;
+            var len=x.length;
+            if(len<8){
+               document.getElementById("error").innerHTML="*Atleat 8 character needed";
+               return false;
+            }
+            else
+            {
+                if(!/[A-Z]/.test(x))
+                {
+                    document.getElementById("error").innerHTML="*Atleat 1 capital letter needed";
+                    return false;
+                }
+                if(!/[a-z]/.test(x))
+                {
+                    document.getElementById("error").innerHTML="*Atleat 1 small letter needed";
+                    return false;
+                }
+                if(!/\d/.test(x))
+                {
+                    document.getElementById("error").innerHTML="*Atleat 1 number needed";
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

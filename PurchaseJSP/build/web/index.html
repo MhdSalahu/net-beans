@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOV Company</title>
+    <Style>
+        *{
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        body{
+            padding: 16PX;
+            text-align: center;
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            width: 95vw;
+            height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            font-family: sans-serif;
+            font-weight: bolder;
+            color: rgb(45, 58, 73);
+        }
+        div{
+            background-color: rgb(253, 229, 239);
+            width: fit-content;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: inset;
+            animation: boxAnimation 5s infinite;
+        }
+        @keyframes boxAnimation {
+            50% {box-shadow: 10px 20px 30px rgb(138, 128, 128);}
+        }
+        input{
+            padding: 7px;
+            border: 0 solid white;
+            margin: 5px;
+            border-radius: 8px 0 8px 0;
+        }
+        input:hover{
+            border-radius: 0 8px 0 8px;
+            scale: 1.1;
+        }
+        input[type="submit"]{
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover{
+            background-color: #d48831;
+        }
+    </Style>
+</head>
+<body>
+   <div>
+    <h1>OOV  Company</h1><br>
+    <h2>Purchase Order Form</h2>
+    <a href="cnfrm"></a></h4>
+    <form action="cnfrm.jsp" method="get">
+        <input type="text" name="itemNo" id="" placeholder="Number"/><br>
+        <input type="text" name="itemName" id="" placeholder="Name"/><br>
+        <input type="text" name="itemDesc" id="desc" placeholder="Description"/><br>
+        <input type="text" name="itemQnty" id="" placeholder="Quantity"/><br>
+
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+   </div>
+    
+</body>
+</html>

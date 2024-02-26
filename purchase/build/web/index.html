@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Order Using servelet</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            padding: 10px;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+        td, th {
+        border: 1px solid #dddddd;
+        padding: 5px;
+        }
+        input{
+            border: 0px solid black;
+            width: 100%;
+            height: 5vh;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            width: fit-content;
+            margin: 5px;
+            padding-inline: 10px;
+            font-size: medium;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover{
+            scale: 1.1;
+            background-color: #d48831;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>PURCHASE ORDER FORM</h1>
+    <form action="purchase" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Item No</th>
+                    <th>Item Name</th>
+                    <th>Quantify</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="sno" value=""/></td>
+                    <td><input type="text" name="ino" value=""/></td>
+                    <td><input type="text" name="iname" value=""/></td>
+                    <td><input type="text" name="qty" value=""/></td>
+                    <td><input type="text" name="price" value=""/></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="sno1" value=""/></td>
+                    <td><input type="text" name="ino1" value=""/></td>
+                    <td><input type="text" name="iname1" value=""/></td>
+                    <td><input type="text" name="qty1" value=""/></td>
+                    <td><input type="text" name="price1" value=""/></td>
+                </tr><tr>
+                    <td><input type="text" name="sno2" value=""/></td>
+                    <td><input type="text" name="ino2" value=""/></td>
+                    <td><input type="text" name="iname2" value=""/></td>
+                    <td><input type="text" name="qty2" value=""/></td>
+                    <td><input type="text" name="price2" value=""/></td>
+                </tr>
+            </tbody>
+        </table><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
